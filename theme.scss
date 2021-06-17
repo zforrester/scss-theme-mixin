@@ -1,0 +1,52 @@
+// Color Themed Elements
+//-------------------------------------------------------------------
+
+// Basic selectors for all themeable elements are collected in mixin
+@mixin theme(
+    $color,
+    $color-gradient-start,
+    $color-gradient-end,
+    $text-color: $color,
+    $background-color: $color,
+    $angle: 180deg
+) {
+    // Apply theme color to text
+    %themed-color {
+        color: $text-color;
+    }
+
+    // Apply theme color to background and finds a contrasting color for text
+    %themed-bg {
+        background-color: $background-color;
+    }
+
+    // Apply theme color to border
+    %themed-border {
+        border-color: $color;
+    }
+
+    // Apply theme gradient to background
+    %themed-gradient {
+        background-image: linear-gradient(
+            $angle,
+            $color-gradient-start,
+            $color-gradient-end
+        );
+    }
+}
+
+// Sample usage
+//----------------------
+//
+// .blue {
+//    @include theme($brand-blue, $brand-blue-light, $brand-blue-dark)
+// }
+//
+// .red {
+//    @include theme($brand-red, $brand-red-light, $brand-red-dark)
+// }
+//
+// .primary-cta {
+// 	  @extend %themed-gradient
+// }
+//

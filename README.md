@@ -1,4 +1,4 @@
-# scss-theme-mixin
+# SCSS Theme Mixin
 
 A mixin for themeing elements without loops, and minimal code waste
 
